@@ -1,4 +1,4 @@
-# tor-fied-lamp
+# tor-fied-armhf-lamp
 ## Repository
 https://github.com/tgeek77/tor-fied-armhf-lamp
 
