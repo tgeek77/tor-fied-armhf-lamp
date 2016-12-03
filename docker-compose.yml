@@ -10,7 +10,7 @@ services:
      environment:
                  APACHE_PORTS: "80:80"
   db:
-     image: bernhardesperester/armhf-mysql
+     image: jsevans/marias-arm
      restart: always
      environment:
          MYSQL_ROOT_PASSWORD: rootpass
