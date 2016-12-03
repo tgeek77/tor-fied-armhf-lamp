@@ -1,26 +1,31 @@
 # tor-fied-lamp
+## Repository
+https://github.com/tgeek77/tor-fied-armhf-lamp
+
+```
+git clone https://github.com/tgeek77/tor-fied-armhf-lamp
+```
+
 ## Intro
 
-These are docker-compose and dockerfile scripts for creating a simple vanilla lamp stack runing as a hidden service onion.
+These are docker-compose and dockerfile scripts for creating a simple vanilla lamp stack running as a hidden service onion.
 
-#### Special thanks to [cmehay](https://github.com/cmehay/docker-tor-hidden-service) for their projects which allowed me to build this one.
+## Special thanks to:
 
-#### About the scripts:
+ [goldy](https://hub.docker.com/r/goldy/tor-hidden-service/) for his project which allowed me to build this one.
+
+## About the scripts:
 
 docker-compose.yml calls on three images:
 
-<dl>
-  <dt>tor</dt>
-  <dd>tor is the docker images which published the lamp stack as a .onion website.</dd>
+jsevans/docker-tor-armhf-hidden-service
+This is my ARM port of the https://hub.docker.com/r/goldy/tor-hidden-service/ image.
 
-  <dt>db</dt>
-  <dd>db uses the official mariadb image from http://hub.docker.com</dd>
+jsevans/marias-arm
+This is my ARM port of the official mariadb image.
 
-  <dt>apache</dt>
-  <dd>apache is my own image that is build by the attached dockerfile.</dd>
-</dl>
-
-Dockerfile uses ubuntu:latest and installs a list of packages including apache2, php, and some standard dependancies. The list of packages can be changed or added to as needed for your own personal needs.
+jsevans/apache-arm
+This is my own image that installs a list of packages including apache2, php, and some standard dependancies. The list of packages can be changed or added to as needed for your own personal needs.
 
 #### Variables
 
@@ -47,12 +52,12 @@ docker-compose down
 Your new .onion hostname will be in ~/.keys/wordpress/hostname or you can run the following command:
 
 ```
-$ docker exec -ti torfiedlamp_tor_1 onions
+$ docker exec -ti torfiedarmhflamp_tor_1 onions
 ```
 
 #### Setting up LAMP applications
 
-I have successfully install Joomla, Wordpress, Koken, and phpMyAdmin using this project.
+I have successfully installed Joomla, Wordpress, Koken, and phpMyAdmin using this project.
 
 Joomla, Wordpress, etc. -- the database location should not be "localhost", instead it should be "db" as that is how you can connect to the remote database container.
 
