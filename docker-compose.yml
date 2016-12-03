@@ -21,7 +21,7 @@ services:
   apache:
      depends_on:
           - db
-     build: .
+     image: jsevans/apache-arm
      links:
           - db:db
      restart: always
